@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extract Gallery Images - Aarya Hotel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #197fe6;
+        }
+        .instructions {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .code-block {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 10px 0;
+        }
+        button {
+            background: #197fe6;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 5px;
+        }
+        button:hover {
+            background: #1565c0;
+        }
+        #results {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 5px;
+            display: none;
+        }
+        .image-item {
+            padding: 10px;
+            margin: 5px 0;
+            background: white;
+            border-left: 3px solid #197fe6;
+        }
+        .image-url {
+            font-family: monospace;
+            color: #197fe6;
+            word-break: break-all;
+        }
+        .copy-btn {
+            background: #4caf50;
+            padding: 5px 10px;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🖼️ Aarya Hotel Gallery Image Extractor</h1>
+        
+        <div class="instructions">
+            <h3>📋 Instructions:</h3>
+            <ol>
+                <li>Open <strong>https://www.aaryahotel.com/gallery-list</strong> in a new tab</li>
+                <li>Open Developer Tools (Press F12)</li>
+                <li>Go to the <strong>Console</strong> tab</li>
+                <li>Copy and paste the JavaScript code below into the console</li>
+                <li>Press Enter to run it</li>
+                <li>Copy the results and use them to update your HTML files</li>
+            </ol>
+        </div>
+
+        <h3>📝 JavaScript Code to Run:</h3>
+        <div class="code-block">
+            <pre id="jsCode">(function() {
+    console.log('=== Aarya Hotel Gallery Image Extractor ===\\n');
+    
+    const images = document.querySelectorAll('img[src*="galleryimages"], img[data-src*="galleryimages"]');
+    const imageMap = {
+        exterior: [],
+        rooms: {
+            presidential: [],
+            executive: [],
+            aaryaSuite: [],
+            aaryaDeluxe: []
+        },
+        restaurant: [],
+        spa: [],
+        gym: [],
+        pool: [],
+        jacuzzi: [],
+        steam: [],
+        others: []
+    };
+    
+    images.forEach((img) => {
+        const src = img.src || img.getAttribute('data-src') || img.getAttribute('srcset')?.split(' ')[0];
+        if (src && src.includes('galleryimages')) {
+            const alt = (img.alt || img.getAttribute('alt') || '').toLowerCase();
+            const filename = src.split('/').pop();
+            const imageData = { filename, url: src, alt: img.alt || '' };
+            
+            if (alt.includes('building') || alt.includes('exterior') || alt.includes('reception') || alt.includes('lobby') || alt.includes('corridor')) {
+                imageMap.exterior.push(imageData);
+            } else if (alt.includes('presidential')) {
+                imageMap.rooms.presidential.push(imageData);
+            } else if (alt.includes('executive')) {
+                imageMap.rooms.executive.push(imageData);
+            } else if (alt.includes('aarya suite') || alt.includes('heritage')) {
+                imageMap.rooms.aaryaSuite.push(imageData);
+            } else if (alt.includes('aarya deluxe') || alt.includes('deluxe')) {
+                imageMap.rooms.aaryaDeluxe.push(imageData);
+            } else if (alt.includes('restaurant') || alt.includes('breakfast')) {
+                imageMap.restaurant.push(imageData);
+            } else if (alt.includes('spa')) {
+                imageMap.spa.push(imageData);
+            } else if (alt.includes('gym')) {
+                imageMap.gym.push(imageData);
+            } else if (alt.includes('pool') || alt.includes('swimming')) {
+                imageMap.pool.push(imageData);
+            } else if (alt.includes('jacuzzi')) {
+                imageMap.jacuzzi.push(imageData);
+            } else if (alt.includes('steam')) {
+                imageMap.steam.push(imageData);
+            } else {
+                imageMap.others.push(imageData);
+            }
+        }
+    });
+    
+    console.log('\\n=== EXTERIOR IMAGES ===');
+    imageMap.exterior.forEach(img => console.log(img.url));
+    
+    console.log('\\n=== PRESIDENTIAL SUITE ===');
+    imageMap.rooms.presidential.forEach(img => console.log(img.url));
+    
+    console.log('\\n=== EXECUTIVE SUITE ===');
+    imageMap.rooms.executive.forEach(img => console.log(img.url));
+    
+    console.log('\\n=== AARYA SUITE ===');
+    imageMap.rooms.aaryaSuite.forEach(img => console.log(img.url));
+    
+    console.log('\\n=== AARYA DELUXE ===');
+    imageMap.rooms.aaryaDeluxe.forEach(img => console.log(img.url));
+    
+    console.log('\\n=== RESTAURANT ===');
+    imageMap.restaurant.forEach(img => console.log(img.url));
+    
+    console.log('\\n=== SPA ===');
+    imageMap.spa.forEach(img => console.log(img.url));
+    
+    console.log('\\n=== GYM ===');
+    imageMap.gym.forEach(img => console.log(img.url));
+    
+    console.log('\\n=== POOL ===');
+    imageMap.pool.forEach(img => console.log(img.url));
+    
+    console.log('\\n=== JSON OUTPUT ===');
+    console.log(JSON.stringify(imageMap, null, 2));
+    
+    return imageMap;
+})();</pre>
+        </div>
+
+        <button onclick="copyCode()">📋 Copy Code</button>
+
+        <h3>🔍 Alternative: Network Tab Method</h3>
+        <div class="instructions">
+            <ol>
+                <li>Open <strong>https://www.aaryahotel.com/gallery-list</strong></li>
+                <li>Open Developer Tools (F12)</li>
+                <li>Go to <strong>Network</strong> tab</li>
+                <li>Filter by <strong>"Img"</strong></li>
+                <li>Click through gallery categories (Exterior, Rooms, Restaurant, Others)</li>
+                <li>As images load, you'll see URLs like:
+                    <code>https://www.aaryahotel.com/images/package/galleryimages/[filename].webp</code>
+                </li>
+                <li>Right-click each image → Copy → Copy link address</li>
+            </ol>
+        </div>
+
+        <h3>📝 Quick Reference: Where to Use Images</h3>
+        <div class="code-block">
+            <strong>Homepage (homepage/code.html):</strong><br>
+            - Hero: Exterior/Building image<br>
+            - Presidential Suite card: Presidential Suite image<br>
+            - Executive Suite card: Executive Suite image<br>
+            - Aarya Suite card: Aarya Suite image<br>
+            - Spa section: Spa image<br>
+            - Restaurant section: Restaurant image<br><br>
+            
+            <strong>Rooms Listing (rooms_&_suites_listing/code.html):</strong><br>
+            - Hero: Lobby/Reception image<br>
+            - Room cards: Matching room type images<br>
+        </div>
+    </div>
+
+    <script>
+        function copyCode() {
+            const code = document.getElementById('jsCode').textContent;
+            navigator.clipboard.writeText(code).then(() => {
+                alert('✅ Code copied to clipboard! Now paste it in the browser console on the gallery page.');
+            });
+        }
+    </script>
+</body>
+</html>
+

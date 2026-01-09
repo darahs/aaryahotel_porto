@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Aarya Hotel - Facilities &amp; Amenities</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries&suppress-warning=true"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        /* Brand / Accent */
+                        primary: "#9C4F2F",
+                        "primary-hover": "#7B3F26",
+                        accent: "#C9A24D",
+                        /* Light Mode */
+                        "background-light": "#F6F1EA",
+                        "surface-light": "#FAF7F2",
+                        "border-light": "#E2D5C4",
+                        /* Dark Mode */
+                        "background-dark": "#1F120B",
+                        "surface-dark": "#2A1A11",
+                        "border-dark": "#4A2F1E",
+                        /* Text */
+                        "text-primary": "#3A2416",
+                        "text-secondary": "#5A3E2B",
+                        "text-muted": "#8B6F5A",
+                        "text-inverse": "#F6F1EA",
+                        /* Legacy support */
+                        "card-dark": "#2A1A11",
+                        "text-main": "#3A2416",
+                    },
+                    fontFamily: {
+                        display: ["Playfair Display", "serif"],
+                        body: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                        lg: "1rem",
+                        xl: "1.5rem",
+                        full: "9999px",
+                    },
+                    boxShadow: {
+                        soft: "0 4px 20px rgba(58, 36, 22, 0.12)",
+                        deep: "0 10px 40px rgba(31, 18, 11, 0.35)",
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: "Inter", sans-serif;
+        }
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #c1c1c1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a8a8a8;
+        }
+    </style>
+</head>
+<body>
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark overflow-x-hidden font-body">
+<!-- Navigation -->
+<div class="w-full bg-white dark:bg-[#1a222a] border-b border-solid border-[#f0f2f4] dark:border-[#2a323a]">
+<div class="layout-container flex justify-center">
+<div class="layout-content-container flex flex-col w-full max-w-[1280px]"> <!-- Increased max-width for modern feel -->
+<header class="sticky top-0 z-50 w-full border-b border-solid border-b-[#f0f2f4] dark:border-[#2b3544] bg-white/90 dark:bg-background-dark/90 backdrop-blur-md px-4 md:px-10 py-3">
+<div class="mx-auto flex max-w-[1200px] items-center justify-between">
+<div class="flex items-center gap-4 text-text-main dark:text-white">
+<div class="size-8 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M24 45.8096C19.6865 45.8096 15.4698 44.5305 11.8832 42.134C8.29667 39.7376 5.50128 36.3314 3.85056 32.3462C2.19985 28.361 1.76794 23.9758 2.60947 19.7452C3.451 15.5145 5.52816 11.6284 8.57829 8.5783C11.6284 5.52817 15.5145 3.45101 19.7452 2.60948C23.9758 1.76795 28.361 2.19986 32.3462 3.85057C36.3314 5.50129 39.7376 8.29668 42.134 11.8833C44.5305 15.4698 45.8096 19.6865 45.8096 24L24 24L24 45.8096Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">Aarya Hotel</h2>
+</div>
+<nav class="hidden md:flex flex-1 justify-end gap-8 items-center">
+<div class="flex items-center gap-6">
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="../homepage/code.html">Home</a>
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="../rooms_&_suites_listing/code.html">Rooms</a>
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="../dining_options/code.html">Dining</a>
+<a class="text-primary text-sm font-bold leading-normal" href="code.html">Amenities</a>
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="../events_page/code.html">Events</a>
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="../gallery/code.html">Gallery</a>
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="../contact_us/location/code.html">Contact</a>
+</div>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-6 bg-primary hover:bg-blue-600 transition-colors text-white text-sm font-bold leading-normal tracking-[0.015em] shadow-lg shadow-primary/20" onclick="window.location.href='../room_details/code.html'">
+<span class="truncate">Book Now</span>
+</button>
+</nav>
+<button class="md:hidden flex items-center p-2 text-text-main dark:text-white hover:text-primary transition-colors cursor-pointer" id="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle mobile menu">
+<span class="material-symbols-outlined text-2xl" id="menu-icon">menu</span>
+</button>
+</div>
+<!-- Mobile Menu Dropdown -->
+<div class="md:hidden fixed top-[73px] left-0 right-0 bg-white dark:bg-background-dark border-b border-gray-200 dark:border-gray-800 shadow-lg z-50 max-h-0 overflow-hidden transition-all duration-300 ease-in-out" id="mobile-menu">
+<div class="flex flex-col">
+<a class="px-6 py-4 text-text-main dark:text-white hover:bg-primary/10 hover:text-primary transition-colors border-b border-gray-100 dark:border-gray-800 flex items-center gap-3" href="../homepage/code.html">
+<span class="material-symbols-outlined text-xl">home</span>
+<span class="text-sm font-medium">Home</span>
+</a>
+<a class="px-6 py-4 text-text-main dark:text-white hover:bg-primary/10 hover:text-primary transition-colors border-b border-gray-100 dark:border-gray-800 flex items-center gap-3" href="../rooms_&_suites_listing/code.html">
+<span class="material-symbols-outlined text-xl">bed</span>
+<span class="text-sm font-medium">Rooms</span>
+</a>
+<a class="px-6 py-4 text-text-main dark:text-white hover:bg-primary/10 hover:text-primary transition-colors border-b border-gray-100 dark:border-gray-800 flex items-center gap-3" href="../dining_options/code.html">
+<span class="material-symbols-outlined text-xl">restaurant</span>
+<span class="text-sm font-medium">Dining</span>
+</a>
+<a class="px-6 py-4 text-primary hover:bg-primary/10 transition-colors border-b border-gray-100 dark:border-gray-800 flex items-center gap-3" href="code.html">
+<span class="material-symbols-outlined text-xl">spa</span>
+<span class="text-sm font-medium">Amenities</span>
+</a>
+<a class="px-6 py-4 text-text-main dark:text-white hover:bg-primary/10 hover:text-primary transition-colors border-b border-gray-100 dark:border-gray-800 flex items-center gap-3" href="../events_page/code.html">
+<span class="material-symbols-outlined text-xl">event</span>
+<span class="text-sm font-medium">Events</span>
+</a>
+<a class="px-6 py-4 text-text-main dark:text-white hover:bg-primary/10 hover:text-primary transition-colors border-b border-gray-100 dark:border-gray-800 flex items-center gap-3" href="../gallery/code.html">
+<span class="material-symbols-outlined text-xl">photo_library</span>
+<span class="text-sm font-medium">Gallery</span>
+</a>
+<a class="px-6 py-4 text-text-main dark:text-white hover:bg-primary/10 hover:text-primary transition-colors border-b border-gray-100 dark:border-gray-800 flex items-center gap-3" href="../contact_us/location/code.html">
+<span class="material-symbols-outlined text-xl">location_on</span>
+<span class="text-sm font-medium">Contact</span>
+</a>
+<button class="mx-6 my-4 bg-primary hover:bg-primary-hover text-white font-bold py-3 rounded-xl text-sm transition-colors shadow-lg shadow-primary/20" onclick="window.location.href='../room_details/code.html'">
+Book Now
+</button>
+</div>
+</div>
+<script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            
+            if (menu.classList.contains('max-h-0')) {
+                menu.classList.remove('max-h-0');
+                menu.classList.add('max-h-screen');
+                icon.textContent = 'close';
+            } else {
+                menu.classList.remove('max-h-screen');
+                menu.classList.add('max-h-0');
+                icon.textContent = 'menu';
+            }
+        }
+        
+        // Close menu on window resize
+        window.addEventListener('resize', function() {
+            if (window.innerWidth >= 768) {
+                const menu = document.getElementById('mobile-menu');
+                const icon = document.getElementById('menu-icon');
+                menu.classList.remove('max-h-screen');
+                menu.classList.add('max-h-0');
+                icon.textContent = 'menu';
+            }
+        });
+    </script>
+</header>
+</div>
+</div>
+</div>
+<div class="layout-container flex h-full grow flex-col">
+<!-- Hero Section -->
+<div class="px-0 sm:px-6 lg:px-40 flex flex-1 justify-center py-5">
+<div class="layout-content-container flex flex-col w-full max-w-[1280px] flex-1">
+<div class="@container">
+<div class="p-4">
+<div class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat rounded-xl items-center justify-center p-8 text-center relative overflow-hidden group" data-alt="Luxury hotel pool at sunset with warm lighting" style='background-image: linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.5) 100%), url("../images/images/swwimingpool/PHADv-pool.webp");'>
+<div class="flex flex-col gap-4 max-w-[720px] z-10 animate-fade-in-up">
+<h1 class="text-white text-4xl sm:text-5xl lg:text-6xl font-black leading-tight tracking-[-0.033em] drop-shadow-md">
+                                        Experience Aarya: Comfort Beyond Expectation
+                                    </h1>
+<h2 class="text-white/90 text-base sm:text-lg font-normal leading-relaxed max-w-xl mx-auto drop-shadow-sm">
+                                        Discover a sanctuary of relaxation and wellness designed for your ultimate comfort. From our infinity pool to our world-class spa, every detail is curated for you.
+                                    </h2>
+</div>
+<button class="z-10 mt-4 flex cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-8 bg-white hover:bg-gray-100 transition-colors text-primary text-base font-bold leading-normal tracking-[0.015em] shadow-lg">
+<span class="truncate">Explore Amenities</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Icon Highlight Bar -->
+<div class="w-full bg-white dark:bg-[#1a222a] border-y border-[#f0f2f4] dark:border-[#2a323a]">
+<div class="flex justify-center px-6 lg:px-40 py-10">
+<div class="max-w-[1280px] w-full grid grid-cols-2 md:grid-cols-4 gap-8">
+<div class="flex flex-col items-center gap-3 text-center group cursor-default">
+<div class="p-4 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-primary text-3xl">wifi</span>
+</div>
+<div>
+<h3 class="font-bold text-[#111418] dark:text-white text-base">High-Speed WiFi</h3>
+<p class="text-[#637588] dark:text-gray-400 text-sm">Complimentary everywhere</p>
+</div>
+</div>
+<div class="flex flex-col items-center gap-3 text-center group cursor-default">
+<div class="p-4 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-primary text-3xl">concierge</span>
+</div>
+<div>
+<h3 class="font-bold text-[#111418] dark:text-white text-base">24/7 Concierge</h3>
+<p class="text-[#637588] dark:text-gray-400 text-sm">Always at your service</p>
+</div>
+</div>
+<div class="flex flex-col items-center gap-3 text-center group cursor-default">
+<div class="p-4 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-primary text-3xl">local_parking</span>
+</div>
+<div>
+<h3 class="font-bold text-[#111418] dark:text-white text-base">Valet Parking</h3>
+<p class="text-[#637588] dark:text-gray-400 text-sm">Secure and convenient</p>
+</div>
+</div>
+<div class="flex flex-col items-center gap-3 text-center group cursor-default">
+<div class="p-4 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-primary text-3xl">restaurant</span>
+</div>
+<div>
+<h3 class="font-bold text-[#111418] dark:text-white text-base">In-Room Dining</h3>
+<p class="text-[#637588] dark:text-gray-400 text-sm">Gourmet meals delivered</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bento Grid - Premium Amenities -->
+<div class="px-6 lg:px-40 flex flex-1 justify-center py-12">
+<div class="layout-content-container flex flex-col w-full max-w-[1280px] flex-1">
+<div class="flex flex-col gap-2 mb-8 px-4">
+<h2 class="text-[#111418] dark:text-white text-3xl font-bold leading-tight tracking-[-0.015em]">Our Premium Amenities</h2>
+<p class="text-[#637588] dark:text-gray-400 text-lg">Curated spaces designed for your wellness and enjoyment.</p>
+</div>
+<!-- Bento Layout -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 p-4">
+<!-- Main Feature (Pool) -->
+<div class="md:col-span-2 md:row-span-2 group relative overflow-hidden rounded-xl bg-white dark:bg-[#1a222a] shadow-sm hover:shadow-md transition-all">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Stunning infinity pool overlooking the city skyline" style='background-image: url("../images/images/swwimingpool/PHADv-pool.webp");'>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8 flex flex-col gap-2 text-white">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-primary">pool</span>
+<span class="text-sm font-bold uppercase tracking-wider text-primary">Signature Feature</span>
+</div>
+<h3 class="text-2xl font-bold">The Azure Pool</h3>
+<p class="text-white/80 max-w-md">Our infinity pool offers panoramic city views, private cabanas, and a heated section for year-round enjoyment. Open daily 6am - 10pm.</p>
+<a class="inline-flex items-center gap-1 mt-2 text-sm font-bold hover:underline decoration-primary underline-offset-4" href="#">
+                                    View Details <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Spa -->
+<div class="h-[300px] group relative overflow-hidden rounded-xl bg-white dark:bg-[#1a222a] shadow-sm hover:shadow-md transition-all">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Relaxing spa treatment room with candles and towels" style='background-image: url("../images/images/spa/usZzK-1.webp");'>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6 text-white w-full">
+<h3 class="text-xl font-bold mb-1">Serenity Spa</h3>
+<p class="text-white/80 text-sm line-clamp-2">Full-service treatments, sauna, and steam rooms for ultimate relaxation.</p>
+</div>
+</div>
+<!-- Gym -->
+<div class="h-[300px] group relative overflow-hidden rounded-xl bg-white dark:bg-[#1a222a] shadow-sm hover:shadow-md transition-all">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Modern fitness center with treadmills and weights" style='background-image: url("../images/images/gym/6JkZh-Untitled-1010.jpg");'>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6 text-white w-full">
+<h3 class="text-xl font-bold mb-1">Fitness Studio</h3>
+<p class="text-white/80 text-sm line-clamp-2">State-of-the-art TechnoGym equipment accessible 24/7 for all guests.</p>
+</div>
+</div>
+</div>
+<!-- Secondary Row -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 p-4 pt-0">
+<!-- Executive Lounge -->
+<div class="group flex flex-col sm:flex-row overflow-hidden rounded-xl bg-white dark:bg-[#1a222a] shadow-sm hover:shadow-md transition-all border border-[#f0f2f4] dark:border-[#2a323a]">
+<div class="w-full sm:w-1/2 h-48 sm:h-auto bg-cover bg-center" data-alt="Business lounge with comfortable seating and laptops" style='background-image: url("../images/images/interior/tzFnW-9.webp");'></div>
+<div class="w-full sm:w-1/2 p-6 flex flex-col justify-center">
+<div class="mb-2 p-2 w-fit rounded-lg bg-background-light dark:bg-background-dark text-primary">
+<span class="material-symbols-outlined">business_center</span>
+</div>
+<h3 class="text-[#111418] dark:text-white text-xl font-bold mb-2">Executive Lounge</h3>
+<p class="text-[#637588] dark:text-gray-400 text-sm mb-4">Dedicated business center and quiet zones for productivity. High-speed ethernet ports and printing services available.</p>
+<a class="text-primary text-sm font-bold hover:underline" href="#">Learn More</a>
+</div>
+</div>
+<!-- Dining -->
+<div class="group flex flex-col sm:flex-row overflow-hidden rounded-xl bg-white dark:bg-[#1a222a] shadow-sm hover:shadow-md transition-all border border-[#f0f2f4] dark:border-[#2a323a]">
+<div class="w-full sm:w-1/2 h-48 sm:h-auto bg-cover bg-center" data-alt="Fine dining restaurant interior with set tables" style='background-image: url("../images/images/restaurant/77sdJ-1.webp");'></div>
+<div class="w-full sm:w-1/2 p-6 flex flex-col justify-center">
+<div class="mb-2 p-2 w-fit rounded-lg bg-background-light dark:bg-background-dark text-primary">
+<span class="material-symbols-outlined">local_bar</span>
+</div>
+<h3 class="text-[#111418] dark:text-white text-xl font-bold mb-2">The Skyline Bar</h3>
+<p class="text-[#637588] dark:text-gray-400 text-sm mb-4">Enjoy signature cocktails and small plates with a breathtaking view of the city lights.</p>
+<a class="text-primary text-sm font-bold hover:underline" href="#">View Menu</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- More Conveniences List -->
+<div class="px-6 lg:px-40 flex flex-1 justify-center pb-20">
+<div class="layout-content-container flex flex-col w-full max-w-[1280px] flex-1">
+<h2 class="text-[#111418] dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-6">More Conveniences</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 px-4">
+<!-- Item 1 -->
+<div class="flex items-center gap-4 p-4 rounded-xl bg-white dark:bg-[#1a222a] border border-[#f0f2f4] dark:border-[#2a323a] shadow-sm">
+<div class="size-12 rounded-full bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">local_laundry_service</span>
+</div>
+<div>
+<p class="text-[#111418] dark:text-white font-bold">Laundry Service</p>
+<p class="text-[#637588] dark:text-gray-400 text-sm">Same-day return available</p>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex items-center gap-4 p-4 rounded-xl bg-white dark:bg-[#1a222a] border border-[#f0f2f4] dark:border-[#2a323a] shadow-sm">
+<div class="size-12 rounded-full bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">airport_shuttle</span>
+</div>
+<div>
+<p class="text-[#111418] dark:text-white font-bold">Airport Shuttle</p>
+<p class="text-[#637588] dark:text-gray-400 text-sm">Scheduled transfers</p>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="flex items-center gap-4 p-4 rounded-xl bg-white dark:bg-[#1a222a] border border-[#f0f2f4] dark:border-[#2a323a] shadow-sm">
+<div class="size-12 rounded-full bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">luggage</span>
+</div>
+<div>
+<p class="text-[#111418] dark:text-white font-bold">Luggage Storage</p>
+<p class="text-[#637588] dark:text-gray-400 text-sm">Secure storage facilities</p>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="flex items-center gap-4 p-4 rounded-xl bg-white dark:bg-[#1a222a] border border-[#f0f2f4] dark:border-[#2a323a] shadow-sm">
+<div class="size-12 rounded-full bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">currency_exchange</span>
+</div>
+<div>
+<p class="text-[#111418] dark:text-white font-bold">Currency Exchange</p>
+<p class="text-[#637588] dark:text-gray-400 text-sm">Competitive rates</p>
+</div>
+</div>
+<!-- Item 5 -->
+<div class="flex items-center gap-4 p-4 rounded-xl bg-white dark:bg-[#1a222a] border border-[#f0f2f4] dark:border-[#2a323a] shadow-sm">
+<div class="size-12 rounded-full bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">child_care</span>
+</div>
+<div>
+<p class="text-[#111418] dark:text-white font-bold">Childcare Services</p>
+<p class="text-[#637588] dark:text-gray-400 text-sm">Certified professionals</p>
+</div>
+</div>
+<!-- Item 6 -->
+<div class="flex items-center gap-4 p-4 rounded-xl bg-white dark:bg-[#1a222a] border border-[#f0f2f4] dark:border-[#2a323a] shadow-sm">
+<div class="size-12 rounded-full bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">pets</span>
+</div>
+<div>
+<p class="text-[#111418] dark:text-white font-bold">Pet Friendly</p>
+<p class="text-[#637588] dark:text-gray-400 text-sm">Specific rooms available</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- CTA Section -->
+<div class="w-full bg-[#111418] dark:bg-black py-16 px-6 lg:px-40 text-center">
+<div class="max-w-[800px] mx-auto flex flex-col items-center gap-6">
+<h2 class="text-white text-3xl md:text-4xl font-bold tracking-tight">Ready to relax?</h2>
+<p class="text-gray-400 text-lg max-w-2xl">
+                        Experience world-class amenities and exceptional service at Aarya Hotel. Book your stay directly with us for the best rates.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4 w-full justify-center pt-4">
+<button class="flex min-w-[160px] cursor-pointer items-center justify-center rounded-xl h-12 px-6 bg-primary hover:bg-blue-600 transition-colors text-white text-base font-bold">
+                            Book Your Stay
+                        </button>
+<button class="flex min-w-[160px] cursor-pointer items-center justify-center rounded-xl h-12 px-6 bg-transparent border border-gray-600 hover:border-white hover:text-white transition-colors text-gray-300 text-base font-bold">
+                            Contact Concierge
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

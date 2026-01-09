@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dining Options - Aarya Hotel</title>
+<!-- Google Fonts: Playfair Display & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries&suppress-warning=true"></script>
+<!-- Theme Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        /* Brand / Accent */
+                        primary: "#9C4F2F",
+                        "primary-hover": "#7B3F26",
+                        accent: "#C9A24D",
+                        /* Light Mode */
+                        "background-light": "#F6F1EA",
+                        "surface-light": "#FAF7F2",
+                        "border-light": "#E2D5C4",
+                        /* Dark Mode */
+                        "background-dark": "#1F120B",
+                        "surface-dark": "#2A1A11",
+                        "border-dark": "#4A2F1E",
+                        /* Text */
+                        "text-primary": "#3A2416",
+                        "text-secondary": "#5A3E2B",
+                        "text-muted": "#8B6F5A",
+                        "text-inverse": "#F6F1EA",
+                        /* Legacy support */
+                        "card-dark": "#2A1A11",
+                        "text-main": "#3A2416",
+                    },
+                    fontFamily: {
+                        display: ["Playfair Display", "serif"],
+                        body: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                        lg: "1rem",
+                        xl: "1.5rem",
+                        full: "9999px",
+                    },
+                    boxShadow: {
+                        soft: "0 4px 20px rgba(58, 36, 22, 0.12)",
+                        deep: "0 10px 40px rgba(31, 18, 11, 0.35)",
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#111418] dark:text-white overflow-x-hidden w-full">
+<!-- Top Navigation -->
+<header class="sticky top-0 z-50 w-full border-b border-solid border-b-[#f0f2f4] dark:border-[#2b3544] bg-white/90 dark:bg-background-dark/90 backdrop-blur-md px-4 md:px-10 py-3">
+<div class="mx-auto flex max-w-[1200px] items-center justify-between">
+<div class="flex items-center gap-4 text-text-main dark:text-white">
+<div class="size-8 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M24 45.8096C19.6865 45.8096 15.4698 44.5305 11.8832 42.134C8.29667 39.7376 5.50128 36.3314 3.85056 32.3462C2.19985 28.361 1.76794 23.9758 2.60947 19.7452C3.451 15.5145 5.52816 11.6284 8.57829 8.5783C11.6284 5.52817 15.5145 3.45101 19.7452 2.60948C23.9758 1.76795 28.361 2.19986 32.3462 3.85057C36.3314 5.50129 39.7376 8.29668 42.134 11.8833C44.5305 15.4698 45.8096 19.6865 45.8096 24L24 24L24 45.8096Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">Aarya Hotel</h2>
+</div>
+<nav class="hidden md:flex flex-1 justify-end gap-8 items-center">
+<div class="flex items-center gap-6">
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="../homepage/code.html">Home</a>
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="../rooms_&_suites_listing/code.html">Rooms</a>
+<a class="text-primary text-sm font-bold leading-normal" href="code.html">Dining</a>
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="../facilities_&_amenities/code.html">Amenities</a>
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="../events_page/code.html">Events</a>
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="../gallery/code.html">Gallery</a>
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="../contact_us/location/code.html">Contact</a>
+</div>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-6 bg-primary hover:bg-blue-600 transition-colors text-white text-sm font-bold leading-normal tracking-[0.015em] shadow-lg shadow-primary/20" onclick="window.location.href='../room_details/code.html'">
+<span class="truncate">Book Now</span>
+</button>
+</nav>
+<button class="md:hidden flex items-center p-2 text-text-main dark:text-white hover:text-primary transition-colors cursor-pointer" id="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle mobile menu">
+<span class="material-symbols-outlined text-2xl" id="menu-icon">menu</span>
+</button>
+</div>
+<!-- Mobile Menu Dropdown -->
+<div class="md:hidden fixed top-[73px] left-0 right-0 bg-white dark:bg-background-dark border-b border-gray-200 dark:border-gray-800 shadow-lg z-50 max-h-0 overflow-hidden transition-all duration-300 ease-in-out" id="mobile-menu">
+<div class="flex flex-col">
+<a class="px-6 py-4 text-text-main dark:text-white hover:bg-primary/10 hover:text-primary transition-colors border-b border-gray-100 dark:border-gray-800 flex items-center gap-3" href="../homepage/code.html">
+<span class="material-symbols-outlined text-xl">home</span>
+<span class="text-sm font-medium">Home</span>
+</a>
+<a class="px-6 py-4 text-text-main dark:text-white hover:bg-primary/10 hover:text-primary transition-colors border-b border-gray-100 dark:border-gray-800 flex items-center gap-3" href="../rooms_&_suites_listing/code.html">
+<span class="material-symbols-outlined text-xl">bed</span>
+<span class="text-sm font-medium">Rooms</span>
+</a>
+<a class="px-6 py-4 text-primary hover:bg-primary/10 transition-colors border-b border-gray-100 dark:border-gray-800 flex items-center gap-3" href="code.html">
+<span class="material-symbols-outlined text-xl">restaurant</span>
+<span class="text-sm font-medium">Dining</span>
+</a>
+<a class="px-6 py-4 text-text-main dark:text-white hover:bg-primary/10 hover:text-primary transition-colors border-b border-gray-100 dark:border-gray-800 flex items-center gap-3" href="../facilities_&_amenities/code.html">
+<span class="material-symbols-outlined text-xl">spa</span>
+<span class="text-sm font-medium">Amenities</span>
+</a>
+<a class="px-6 py-4 text-text-main dark:text-white hover:bg-primary/10 hover:text-primary transition-colors border-b border-gray-100 dark:border-gray-800 flex items-center gap-3" href="../events_page/code.html">
+<span class="material-symbols-outlined text-xl">event</span>
+<span class="text-sm font-medium">Events</span>
+</a>
+<a class="px-6 py-4 text-text-main dark:text-white hover:bg-primary/10 hover:text-primary transition-colors border-b border-gray-100 dark:border-gray-800 flex items-center gap-3" href="../gallery/code.html">
+<span class="material-symbols-outlined text-xl">photo_library</span>
+<span class="text-sm font-medium">Gallery</span>
+</a>
+<a class="px-6 py-4 text-text-main dark:text-white hover:bg-primary/10 hover:text-primary transition-colors border-b border-gray-100 dark:border-gray-800 flex items-center gap-3" href="../contact_us/location/code.html">
+<span class="material-symbols-outlined text-xl">location_on</span>
+<span class="text-sm font-medium">Contact</span>
+</a>
+<button class="mx-6 my-4 bg-primary hover:bg-primary-hover text-white font-bold py-3 rounded-xl text-sm transition-colors shadow-lg shadow-primary/20" onclick="window.location.href='../room_details/code.html'">
+Book Now
+</button>
+</div>
+</div>
+<script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            
+            if (menu.classList.contains('max-h-0')) {
+                menu.classList.remove('max-h-0');
+                menu.classList.add('max-h-screen');
+                icon.textContent = 'close';
+            } else {
+                menu.classList.remove('max-h-screen');
+                menu.classList.add('max-h-0');
+                icon.textContent = 'menu';
+            }
+        }
+        
+        // Close menu on window resize
+        window.addEventListener('resize', function() {
+            if (window.innerWidth >= 768) {
+                const menu = document.getElementById('mobile-menu');
+                const icon = document.getElementById('menu-icon');
+                menu.classList.remove('max-h-screen');
+                menu.classList.add('max-h-0');
+                icon.textContent = 'menu';
+            }
+        });
+    </script>
+</header>
+<main class="flex flex-col min-h-screen">
+<!-- Hero Section -->
+<section class="relative w-full h-[600px] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center bg-no-repeat" data-alt="Luxurious dining table set with gourmet food and wine glasses in a dimly lit, elegant restaurant environment" style='background-image: linear-gradient(rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.6) 100%), url("../images/images/restaurant/6qboK-1.webp");'>
+</div>
+<div class="relative z-10 text-center px-4 max-w-4xl mx-auto flex flex-col gap-6 items-center">
+<h1 class="text-white text-5xl md:text-7xl font-black leading-tight tracking-tight drop-shadow-sm">
+                    Culinary Excellence
+                </h1>
+<p class="text-white/90 text-lg md:text-xl font-medium max-w-2xl leading-relaxed drop-shadow-sm">
+                    From rooftop cocktails to fine Italian dining, experience the flavors of luxury at Aarya.
+                </p>
+<div class="flex flex-wrap justify-center gap-4 mt-4">
+<button class="bg-white text-primary hover:bg-gray-50 px-8 py-3.5 rounded-xl text-base font-bold transition-all shadow-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-xl">restaurant_menu</span>
+                        View All Menus
+                    </button>
+<button class="bg-primary/90 hover:bg-primary backdrop-blur-sm text-white px-8 py-3.5 rounded-xl text-base font-bold transition-all shadow-lg flex items-center gap-2 border border-white/20">
+<span class="material-symbols-outlined text-xl">calendar_today</span>
+                        Find a Table
+                    </button>
+</div>
+</div>
+</section>
+<!-- Section Header -->
+<section class="py-16 px-4 md:px-10 max-w-7xl mx-auto w-full">
+<div class="flex flex-col items-center text-center gap-3 mb-12">
+<span class="text-primary text-sm font-bold tracking-wider uppercase">Taste the Extraordinary</span>
+<h2 class="text-3xl md:text-4xl font-bold text-[#111418] dark:text-white tracking-tight">Our Signature Venues</h2>
+<div class="h-1 w-20 bg-primary/20 rounded-full mt-2"></div>
+</div>
+<!-- Venue 1: The Grand Kitchen (Image Left) -->
+<div class="group relative bg-white dark:bg-surface-dark rounded-3xl p-6 md:p-8 shadow-sm border border-gray-100 dark:border-gray-800 hover:shadow-xl transition-all duration-300 mb-12">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+<!-- Image -->
+<div class="w-full h-[300px] lg:h-[400px] rounded-2xl overflow-hidden relative shadow-md">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Bright and airy restaurant interior with a lavish breakfast buffet spread" style='background-image: url("../images/images/restaurant/faDEa-Restaurant2.webp");'>
+</div>
+<div class="absolute top-4 left-4 bg-white/90 dark:bg-black/80 backdrop-blur text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider text-primary shadow-sm">
+                            Breakfast &amp; Lunch
+                        </div>
+</div>
+<!-- Content -->
+<div class="flex flex-col gap-6">
+<div class="flex flex-col gap-2">
+<h3 class="text-3xl font-bold text-[#111418] dark:text-white">Sora Restaurant</h3>
+<p class="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
+                                An elegant yet relaxed atmosphere that reflects the local culture and flavors, with a modern twist. Incorporating natural elements like wood, greenery, and soft lighting to create a warm and inviting space.
+                            </p>
+</div>
+<!-- Quick Info Pills -->
+<div class="flex flex-wrap gap-3">
+<div class="flex items-center gap-2 px-3 py-1.5 bg-background-light dark:bg-gray-800 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-200">
+<span class="material-symbols-outlined text-primary text-lg">restaurant</span>
+                                International Buffet
+                            </div>
+<div class="flex items-center gap-2 px-3 py-1.5 bg-background-light dark:bg-gray-800 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-200">
+<span class="material-symbols-outlined text-primary text-lg">checkroom</span>
+                                Casual
+                            </div>
+<div class="flex items-center gap-2 px-3 py-1.5 bg-background-light dark:bg-gray-800 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-200">
+<span class="material-symbols-outlined text-primary text-lg">schedule</span>
+                                6:00 AM - 10:00 PM
+                            </div>
+</div>
+<div class="flex items-center gap-4 pt-2">
+<button class="bg-primary hover:bg-blue-600 text-white px-6 py-3 rounded-xl text-sm font-bold transition-all shadow-md shadow-primary/20 flex-1 md:flex-none justify-center flex">
+                                Book Breakfast
+                            </button>
+<button class="text-[#111418] dark:text-white font-bold text-sm hover:text-primary transition-colors flex items-center gap-1 group/btn">
+                                View Menu 
+                                <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Venue 2: Skyline Bar (Image Right) -->
+<div class="group relative bg-white dark:bg-surface-dark rounded-3xl p-6 md:p-8 shadow-sm border border-gray-100 dark:border-gray-800 hover:shadow-xl transition-all duration-300 mb-12">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+<!-- Content -->
+<div class="flex flex-col gap-6 order-2 lg:order-1">
+<div class="flex flex-col gap-2">
+<h3 class="text-3xl font-bold text-[#111418] dark:text-white">Skyline Sora</h3>
+<p class="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
+                                Experience elevated dining with panoramic views of Kathmandu. Skyline Sora offers a sophisticated atmosphere where you can enjoy handcrafted cocktails and fine cuisine while taking in the breathtaking cityscape.
+                            </p>
+</div>
+<!-- Specific Grid for Bar Details -->
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-background-light dark:bg-gray-800 p-4 rounded-xl">
+<span class="material-symbols-outlined text-primary text-2xl mb-2">music_note</span>
+<p class="text-xs text-gray-500 dark:text-gray-400 uppercase font-bold tracking-wider">Atmosphere</p>
+<p class="text-sm font-bold text-gray-900 dark:text-white">Live Jazz &amp; Lounge</p>
+</div>
+<div class="bg-background-light dark:bg-gray-800 p-4 rounded-xl">
+<span class="material-symbols-outlined text-primary text-2xl mb-2">local_bar</span>
+<p class="text-xs text-gray-500 dark:text-gray-400 uppercase font-bold tracking-wider">Signature</p>
+<p class="text-sm font-bold text-gray-900 dark:text-white">Smoked Old Fashioned</p>
+</div>
+</div>
+<div class="flex items-center gap-4 pt-2">
+<button class="bg-primary hover:bg-blue-600 text-white px-6 py-3 rounded-xl text-sm font-bold transition-all shadow-md shadow-primary/20 flex-1 md:flex-none justify-center flex">
+                                Reserve a Table
+                            </button>
+<button class="text-[#111418] dark:text-white font-bold text-sm hover:text-primary transition-colors flex items-center gap-1 group/btn">
+                                Drink Menu 
+                                <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Image -->
+<div class="w-full h-[300px] lg:h-[400px] rounded-2xl overflow-hidden relative shadow-md order-1 lg:order-2">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Sophisticated rooftop bar at night with city lights in the background and cocktails on the table" style='background-image: url("../images/images/restaurant/HJPtm-6.webp");'>
+</div>
+<div class="absolute top-4 right-4 bg-white/90 dark:bg-black/80 backdrop-blur text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider text-primary shadow-sm">
+                            Evening Only
+                        </div>
+</div>
+</div>
+</div>
+<!-- Venue 3: Olive & Vine (Image Left) -->
+<div class="group relative bg-white dark:bg-surface-dark rounded-3xl p-6 md:p-8 shadow-sm border border-gray-100 dark:border-gray-800 hover:shadow-xl transition-all duration-300">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+<!-- Image -->
+<div class="w-full h-[300px] lg:h-[400px] rounded-2xl overflow-hidden relative shadow-md">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Rustic Italian fine dining setting with wine bottles and pasta dishes" style='background-image: url("../images/images/restaurant/S9Jyy-2.webp");'>
+</div>
+<div class="absolute top-4 left-4 bg-white/90 dark:bg-black/80 backdrop-blur text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider text-primary shadow-sm">
+                            Fine Dining
+                        </div>
+</div>
+<!-- Content -->
+<div class="flex flex-col gap-6">
+<div class="flex flex-col gap-2">
+<h3 class="text-3xl font-bold text-[#111418] dark:text-white">The Corner Brew</h3>
+<p class="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
+                                The Corner Brew at Aarya Hotel & Spa is a cozy café and bar located in the heart of Kathmandu's Thamel district. Designed to offer a relaxed atmosphere, it serves a variety of beverages, including specialty coffees, teas, and light snacks. The café's interior blends traditional Nepali elements with modern design, creating a welcoming space for both locals and visitors. Daily Opening Hours: 7 AM to 10 PM.
+                            </p>
+</div>
+<!-- Quick Info Pills -->
+<div class="flex flex-wrap gap-3">
+<div class="flex items-center gap-2 px-3 py-1.5 bg-background-light dark:bg-gray-800 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-200">
+<span class="material-symbols-outlined text-primary text-lg">dinner_dining</span>
+                                Italian Fine Dining
+                            </div>
+<div class="flex items-center gap-2 px-3 py-1.5 bg-background-light dark:bg-gray-800 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-200">
+<span class="material-symbols-outlined text-primary text-lg">dry_cleaning</span>
+                                Smart Casual
+                            </div>
+<div class="flex items-center gap-2 px-3 py-1.5 bg-background-light dark:bg-gray-800 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-200">
+<span class="material-symbols-outlined text-primary text-lg">wine_bar</span>
+                                Sommelier Service
+                            </div>
+</div>
+<div class="flex items-center gap-4 pt-2">
+<button class="bg-primary hover:bg-blue-600 text-white px-6 py-3 rounded-xl text-sm font-bold transition-all shadow-md shadow-primary/20 flex-1 md:flex-none justify-center flex">
+                                Book Dinner
+                            </button>
+<button class="text-[#111418] dark:text-white font-bold text-sm hover:text-primary transition-colors flex items-center gap-1 group/btn">
+                                Wine List 
+                                <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="bg-white dark:bg-surface-dark py-20 border-t border-gray-100 dark:border-gray-800">
+<div class="max-w-4xl mx-auto px-4 text-center">
+<div class="flex justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-5xl opacity-50">format_quote</span>
+</div>
+<h3 class="text-2xl md:text-3xl font-medium text-[#111418] dark:text-white leading-relaxed italic mb-8">
+                    "The Skyline Bar was the highlight of our stay. The view of the city at sunset combined with the Smoked Old Fashioned is an experience I won't forget."
+                </h3>
+<div class="flex flex-col items-center gap-1">
+<p class="font-bold text-lg text-[#111418] dark:text-white">James &amp; Sarah Mitchell</p>
+<p class="text-sm text-gray-500">Stayed August 2023</p>
+</div>
+</div>
+</section>
+<!-- Pre-Footer CTA -->
+<section class="bg-primary py-16 px-4">
+<div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+<div class="flex flex-col gap-2">
+<h2 class="text-white text-3xl font-bold">Have special dietary requirements?</h2>
+<p class="text-blue-100 text-lg">Our chefs are happy to accommodate any allergies or preferences.</p>
+</div>
+<button class="bg-white text-primary hover:bg-blue-50 px-8 py-3 rounded-xl text-base font-bold shadow-xl transition-all whitespace-nowrap">
+                    Contact Dining Concierge
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-background-light dark:bg-surface-dark pt-16 pb-8 border-t border-gray-200 dark:border-gray-800">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+<!-- Brand -->
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-2">
+<div class="size-8 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-xl">diamond</span>
+</div>
+<h3 class="text-xl font-bold text-text-primary dark:text-text-inverse">Aarya Hotel</h3>
+</div>
+<p class="text-text-muted dark:text-gray-400 text-sm leading-relaxed">
+                        Nestled in the vibrant and bustling neighborhood of Thamel, Aarya Hotel & Spa is a luxury heritage hotel that seamlessly blends traditional charm with modern comfort.
+                    </p>
+<div class="flex gap-4 mt-2">
+<a class="text-gray-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="text-gray-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">photo_camera</span></a>
+<a class="text-gray-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">mail</span></a>
+</div>
+</div>
+<!-- Quick Links -->
+<div>
+<h4 class="text-text-primary dark:text-text-inverse font-bold mb-6">Quick Links</h4>
+<ul class="flex flex-col gap-3">
+<li><a class="text-text-muted dark:text-gray-400 hover:text-primary text-sm transition-colors" href="#">About Us</a></li>
+<li><a class="text-text-muted dark:text-gray-400 hover:text-primary text-sm transition-colors" href="../rooms_&_suites_listing/code.html">Rooms &amp; Suites</a></li>
+<li><a class="text-text-muted dark:text-gray-400 hover:text-primary text-sm transition-colors" href="../dining_options/code.html">Dining</a></li>
+<li><a class="text-text-muted dark:text-gray-400 hover:text-primary text-sm transition-colors" href="../facilities_&_amenities/code.html">Spa &amp; Wellness</a></li>
+</ul>
+</div>
+<!-- Contact -->
+<div>
+<h4 class="text-text-primary dark:text-text-inverse font-bold mb-6">Contact Us</h4>
+<ul class="flex flex-col gap-4">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary shrink-0 text-sm mt-0.5">location_on</span>
+<span class="text-text-muted dark:text-gray-400 text-sm">Narsingha Chowk, Thamel, Kathmandu, Nepal</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary shrink-0 text-sm">call</span>
+<span class="text-text-muted dark:text-gray-400 text-sm">+977-15971439, 15971440 / 9709559114</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary shrink-0 text-sm">email</span>
+<span class="text-text-muted dark:text-gray-400 text-sm">info@aaryahotel.com</span>
+</li>
+</ul>
+</div>
+<!-- Newsletter -->
+<div>
+<h4 class="text-text-primary dark:text-text-inverse font-bold mb-6">Newsletter</h4>
+<p class="text-text-muted dark:text-gray-400 text-sm mb-4">Subscribe for exclusive offers and updates.</p>
+<form class="flex flex-col gap-2">
+<input class="w-full px-4 py-2.5 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" placeholder="Your email address" type="email"/>
+<button class="w-full bg-primary hover:bg-primary-hover text-white font-bold py-2.5 rounded-lg text-sm transition-colors">Subscribe</button>
+</form>
+</div>
+</div>
+<div class="border-t border-gray-200 dark:border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-gray-400 text-xs">© 2023 Aarya Hotel. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-xs transition-colors" href="#">Privacy Policy</a>
+<a class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-xs transition-colors" href="#">Terms of Service</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

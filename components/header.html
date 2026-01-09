@@ -1,0 +1,94 @@
+<!-- Navigation -->
+<header class="sticky top-0 z-50 w-full border-b border-solid border-b-[#f0f2f4] dark:border-[#2b3544] bg-white/90 dark:bg-background-dark/90 backdrop-blur-md px-4 md:px-10 py-3">
+<div class="mx-auto flex max-w-[1200px] items-center justify-between">
+<a class="flex items-center gap-4 text-text-main dark:text-white cursor-pointer" data-nav-home>
+<div class="size-8 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M24 45.8096C19.6865 45.8096 15.4698 44.5305 11.8832 42.134C8.29667 39.7376 5.50128 36.3314 3.85056 32.3462C2.19985 28.361 1.76794 23.9758 2.60947 19.7452C3.451 15.5145 5.52816 11.6284 8.57829 8.5783C11.6284 5.52817 15.5145 3.45101 19.7452 2.60948C23.9758 1.76795 28.361 2.19986 32.3462 3.85057C36.3314 5.50129 39.7376 8.29668 42.134 11.8833C44.5305 15.4698 45.8096 19.6865 45.8096 24L24 24L24 45.8096Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">Aarya Hotel</h2>
+</a>
+<nav class="hidden md:flex flex-1 justify-end gap-8 items-center">
+<div class="flex items-center gap-6">
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" data-nav-link="home" href="../homepage/code.html">Home</a>
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" data-nav-link="rooms" href="../rooms_&_suites_listing/code.html">Rooms</a>
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" data-nav-link="dining" href="../dining_options/code.html">Dining</a>
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" data-nav-link="amenities" href="../facilities_&_amenities/code.html">Amenities</a>
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" data-nav-link="events" href="../events_page/code.html">Events</a>
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" data-nav-link="gallery" href="../gallery/code.html">Gallery</a>
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" data-nav-link="contact" href="../contact_us/location/code.html">Contact</a>
+</div>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-6 bg-primary hover:bg-blue-600 transition-colors text-white text-sm font-bold leading-normal tracking-[0.015em] shadow-lg shadow-primary/20" onclick="window.location.href='../room_details/code.html'">
+<span class="truncate">Book Now</span>
+</button>
+</nav>
+<button class="md:hidden flex items-center p-2 text-text-main dark:text-white hover:text-primary transition-colors cursor-pointer" id="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle mobile menu">
+<span class="material-symbols-outlined text-2xl" id="menu-icon">menu</span>
+</button>
+</div>
+<!-- Mobile Menu Dropdown -->
+<div class="md:hidden fixed top-[73px] left-0 right-0 bg-white dark:bg-background-dark border-b border-gray-200 dark:border-gray-800 shadow-lg z-50 max-h-0 overflow-hidden transition-all duration-300 ease-in-out" id="mobile-menu">
+<div class="flex flex-col">
+<a class="px-6 py-4 text-text-main dark:text-white hover:bg-primary/10 hover:text-primary transition-colors border-b border-gray-100 dark:border-gray-800 flex items-center gap-3" data-nav-link="home" href="../homepage/code.html">
+<span class="material-symbols-outlined text-xl">home</span>
+<span class="text-sm font-medium">Home</span>
+</a>
+<a class="px-6 py-4 text-text-main dark:text-white hover:bg-primary/10 hover:text-primary transition-colors border-b border-gray-100 dark:border-gray-800 flex items-center gap-3" data-nav-link="rooms" href="../rooms_&_suites_listing/code.html">
+<span class="material-symbols-outlined text-xl">bed</span>
+<span class="text-sm font-medium">Rooms</span>
+</a>
+<a class="px-6 py-4 text-text-main dark:text-white hover:bg-primary/10 hover:text-primary transition-colors border-b border-gray-100 dark:border-gray-800 flex items-center gap-3" data-nav-link="dining" href="../dining_options/code.html">
+<span class="material-symbols-outlined text-xl">restaurant</span>
+<span class="text-sm font-medium">Dining</span>
+</a>
+<a class="px-6 py-4 text-text-main dark:text-white hover:bg-primary/10 hover:text-primary transition-colors border-b border-gray-100 dark:border-gray-800 flex items-center gap-3" data-nav-link="amenities" href="../facilities_&_amenities/code.html">
+<span class="material-symbols-outlined text-xl">spa</span>
+<span class="text-sm font-medium">Amenities</span>
+</a>
+<a class="px-6 py-4 text-text-main dark:text-white hover:bg-primary/10 hover:text-primary transition-colors border-b border-gray-100 dark:border-gray-800 flex items-center gap-3" data-nav-link="events" href="../events_page/code.html">
+<span class="material-symbols-outlined text-xl">event</span>
+<span class="text-sm font-medium">Events</span>
+</a>
+<a class="px-6 py-4 text-text-main dark:text-white hover:bg-primary/10 hover:text-primary transition-colors border-b border-gray-100 dark:border-gray-800 flex items-center gap-3" data-nav-link="gallery" href="../gallery/code.html">
+<span class="material-symbols-outlined text-xl">photo_library</span>
+<span class="text-sm font-medium">Gallery</span>
+</a>
+<a class="px-6 py-4 text-text-main dark:text-white hover:bg-primary/10 hover:text-primary transition-colors border-b border-gray-100 dark:border-gray-800 flex items-center gap-3" data-nav-link="contact" href="../contact_us/location/code.html">
+<span class="material-symbols-outlined text-xl">location_on</span>
+<span class="text-sm font-medium">Contact</span>
+</a>
+<button class="mx-6 my-4 bg-primary hover:bg-primary-hover text-white font-bold py-3 rounded-xl text-sm transition-colors shadow-lg shadow-primary/20" onclick="window.location.href='../room_details/code.html'">
+Book Now
+</button>
+</div>
+</div>
+<script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            
+            if (menu.classList.contains('max-h-0')) {
+                menu.classList.remove('max-h-0');
+                menu.classList.add('max-h-screen');
+                icon.textContent = 'close';
+            } else {
+                menu.classList.remove('max-h-screen');
+                menu.classList.add('max-h-0');
+                icon.textContent = 'menu';
+            }
+        }
+        
+        // Close menu on window resize
+        window.addEventListener('resize', function() {
+            if (window.innerWidth >= 768) {
+                const menu = document.getElementById('mobile-menu');
+                const icon = document.getElementById('menu-icon');
+                menu.classList.remove('max-h-screen');
+                menu.classList.add('max-h-0');
+                icon.textContent = 'menu';
+            }
+        });
+    </script>
+</header>
+

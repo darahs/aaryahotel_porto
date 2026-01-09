@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Room Details - Aarya Hotel</title>
+<!-- Google Fonts: Playfair Display & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries&suppress-warning=true"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        /* Brand / Accent */
+                        primary: "#9C4F2F",
+                        "primary-hover": "#7B3F26",
+                        accent: "#C9A24D",
+                        /* Light Mode */
+                        "background-light": "#F6F1EA",
+                        "surface-light": "#FAF7F2",
+                        "border-light": "#E2D5C4",
+                        /* Dark Mode */
+                        "background-dark": "#1F120B",
+                        "surface-dark": "#2A1A11",
+                        "border-dark": "#4A2F1E",
+                        /* Text */
+                        "text-primary": "#3A2416",
+                        "text-secondary": "#5A3E2B",
+                        "text-muted": "#8B6F5A",
+                        "text-inverse": "#F6F1EA",
+                        /* Legacy support */
+                        "card-dark": "#2A1A11",
+                        "text-main": "#3A2416",
+                    },
+                    fontFamily: {
+                        display: ["Playfair Display", "serif"],
+                        body: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                        lg: "1rem",
+                        xl: "1.5rem",
+                        full: "9999px",
+                    },
+                    boxShadow: {
+                        soft: "0 4px 20px rgba(58, 36, 22, 0.12)",
+                        deep: "0 10px 40px rgba(31, 18, 11, 0.35)",
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-primary dark:text-text-inverse font-body min-h-screen flex flex-col overflow-x-hidden">
+<!-- Navigation -->
+<header class="sticky top-0 z-50 w-full border-b border-solid border-b-[#f0f2f4] dark:border-[#2b3544] bg-white/90 dark:bg-background-dark/90 backdrop-blur-md px-4 md:px-10 py-3">
+<div class="mx-auto flex max-w-[1200px] items-center justify-between">
+<div class="flex items-center gap-4 text-text-main dark:text-white">
+<div class="size-8 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M24 45.8096C19.6865 45.8096 15.4698 44.5305 11.8832 42.134C8.29667 39.7376 5.50128 36.3314 3.85056 32.3462C2.19985 28.361 1.76794 23.9758 2.60947 19.7452C3.451 15.5145 5.52816 11.6284 8.57829 8.5783C11.6284 5.52817 15.5145 3.45101 19.7452 2.60948C23.9758 1.76795 28.361 2.19986 32.3462 3.85057C36.3314 5.50129 39.7376 8.29668 42.134 11.8833C44.5305 15.4698 45.8096 19.6865 45.8096 24L24 24L24 45.8096Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">Aarya Hotel</h2>
+</div>
+<nav class="hidden md:flex flex-1 justify-end gap-8 items-center">
+<div class="flex items-center gap-6">
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="../homepage/code.html">Home</a>
+<a class="text-primary text-sm font-bold leading-normal" href="../rooms_&_suites_listing/code.html">Rooms</a>
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="../dining_options/code.html">Dining</a>
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="../facilities_&_amenities/code.html">Amenities</a>
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="../events_page/code.html">Events</a>
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="../gallery/code.html">Gallery</a>
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="../contact_us/location/code.html">Contact</a>
+</div>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-6 bg-primary hover:bg-blue-600 transition-colors text-white text-sm font-bold leading-normal tracking-[0.015em] shadow-lg shadow-primary/20" onclick="window.location.href='code.html'">
+<span class="truncate">Book Now</span>
+</button>
+</nav>
+<button class="md:hidden flex items-center p-2 text-text-main dark:text-white hover:text-primary transition-colors cursor-pointer" id="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle mobile menu">
+<span class="material-symbols-outlined text-2xl" id="menu-icon">menu</span>
+</button>
+</div>
+<!-- Mobile Menu Dropdown -->
+<div class="md:hidden fixed top-[73px] left-0 right-0 bg-white dark:bg-background-dark border-b border-gray-200 dark:border-gray-800 shadow-lg z-50 max-h-0 overflow-hidden transition-all duration-300 ease-in-out" id="mobile-menu">
+<div class="flex flex-col">
+<a class="px-6 py-4 text-text-main dark:text-white hover:bg-primary/10 hover:text-primary transition-colors border-b border-gray-100 dark:border-gray-800 flex items-center gap-3" href="../homepage/code.html">
+<span class="material-symbols-outlined text-xl">home</span>
+<span class="text-sm font-medium">Home</span>
+</a>
+<a class="px-6 py-4 text-text-main dark:text-white hover:bg-primary/10 hover:text-primary transition-colors border-b border-gray-100 dark:border-gray-800 flex items-center gap-3" href="../rooms_&_suites_listing/code.html">
+<span class="material-symbols-outlined text-xl">bed</span>
+<span class="text-sm font-medium">Rooms</span>
+</a>
+<a class="px-6 py-4 text-text-main dark:text-white hover:bg-primary/10 hover:text-primary transition-colors border-b border-gray-100 dark:border-gray-800 flex items-center gap-3" href="../dining_options/code.html">
+<span class="material-symbols-outlined text-xl">restaurant</span>
+<span class="text-sm font-medium">Dining</span>
+</a>
+<a class="px-6 py-4 text-text-main dark:text-white hover:bg-primary/10 hover:text-primary transition-colors border-b border-gray-100 dark:border-gray-800 flex items-center gap-3" href="../facilities_&_amenities/code.html">
+<span class="material-symbols-outlined text-xl">spa</span>
+<span class="text-sm font-medium">Amenities</span>
+</a>
+<a class="px-6 py-4 text-text-main dark:text-white hover:bg-primary/10 hover:text-primary transition-colors border-b border-gray-100 dark:border-gray-800 flex items-center gap-3" href="../events_page/code.html">
+<span class="material-symbols-outlined text-xl">event</span>
+<span class="text-sm font-medium">Events</span>
+</a>
+<a class="px-6 py-4 text-text-main dark:text-white hover:bg-primary/10 hover:text-primary transition-colors border-b border-gray-100 dark:border-gray-800 flex items-center gap-3" href="../gallery/code.html">
+<span class="material-symbols-outlined text-xl">photo_library</span>
+<span class="text-sm font-medium">Gallery</span>
+</a>
+<a class="px-6 py-4 text-text-main dark:text-white hover:bg-primary/10 hover:text-primary transition-colors border-b border-gray-100 dark:border-gray-800 flex items-center gap-3" href="../contact_us/location/code.html">
+<span class="material-symbols-outlined text-xl">location_on</span>
+<span class="text-sm font-medium">Contact</span>
+</a>
+<button class="mx-6 my-4 bg-primary hover:bg-primary-hover text-white font-bold py-3 rounded-xl text-sm transition-colors shadow-lg shadow-primary/20" onclick="window.location.href='../room_details/code.html'">
+Book Now
+</button>
+</div>
+</div>
+<script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            
+            if (menu.classList.contains('max-h-0')) {
+                menu.classList.remove('max-h-0');
+                menu.classList.add('max-h-screen');
+                icon.textContent = 'close';
+            } else {
+                menu.classList.remove('max-h-screen');
+                menu.classList.add('max-h-0');
+                icon.textContent = 'menu';
+            }
+        }
+        
+        // Close menu on window resize
+        window.addEventListener('resize', function() {
+            if (window.innerWidth >= 768) {
+                const menu = document.getElementById('mobile-menu');
+                const icon = document.getElementById('menu-icon');
+                menu.classList.remove('max-h-screen');
+                menu.classList.add('max-h-0');
+                icon.textContent = 'menu';
+            }
+        });
+    </script>
+</header>
+<!-- Main Content -->
+<main class="flex-grow pt-6 pb-16">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- Breadcrumbs & Heading -->
+<div class="mb-6 flex flex-col gap-2">
+<div class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+<a class="hover:text-primary" href="#">Rooms</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-gray-900 dark:text-gray-200 font-medium">Ocean View Deluxe Suite</span>
+</div>
+<div class="flex flex-wrap justify-between items-end gap-4">
+<div>
+<h1 class="text-3xl md:text-4xl font-black tracking-tight text-gray-900 dark:text-white mb-2">Ocean View Deluxe Suite</h1>
+<div class="flex items-center gap-4 text-sm text-gray-600 dark:text-gray-400">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-yellow-400 text-[18px] fill-current">star</span>
+<span class="font-medium text-gray-900 dark:text-gray-200">5.0</span>
+<span class="underline decoration-gray-300 ml-1">(124 reviews)</span>
+</span>
+<span class="w-1 h-1 bg-gray-300 rounded-full"></span>
+<span>Miami, FL</span>
+<span class="w-1 h-1 bg-gray-300 rounded-full"></span>
+<span class="text-primary font-medium">Super Luxury</span>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
+<span class="material-symbols-outlined text-[18px]">ios_share</span>
+                            Share
+                        </button>
+<button class="flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+                            Save
+                        </button>
+</div>
+</div>
+</div>
+<!-- Hero Image Grid -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-3 md:gap-4 h-[400px] md:h-[500px] mb-12 rounded-2xl overflow-hidden shadow-sm">
+<!-- Main Image -->
+<div class="col-span-1 md:col-span-2 md:row-span-2 relative group cursor-pointer bg-gray-200">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Spacious modern hotel bedroom with ocean view" style='background-image: url("../images/images/rooms/EzgGE-1.webp");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60"></div>
+</div>
+<!-- Secondary Images -->
+<div class="relative group cursor-pointer overflow-hidden bg-gray-200">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Modern bathroom with marble details" style='background-image: url("../images/images/rooms/1PMTL-3-ezgif.com-jpg-to-webp-converter.webp");'></div>
+</div>
+<div class="relative group cursor-pointer overflow-hidden bg-gray-200">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Private balcony overlooking the ocean" style='background-image: url("../images/images/rooms/7yVsE-2.webp");'></div>
+</div>
+<div class="relative group cursor-pointer overflow-hidden bg-gray-200">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Luxury bedroom interior detail" style='background-image: url("../images/images/rooms/aNsfS-executive.webp");'></div>
+</div>
+<div class="relative group cursor-pointer overflow-hidden bg-gray-200">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Hotel lounge area seating" style='background-image: url("../images/images/interior/JxC7r-4.webp");'></div>
+<div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<span class="text-white font-bold border border-white px-4 py-2 rounded-lg">View all photos</span>
+</div>
+</div>
+</div>
+<!-- Content Split Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-12 relative">
+<!-- Left Column: Details -->
+<div class="lg:col-span-2 flex flex-col gap-10">
+<!-- Quick Stats -->
+<div class="flex items-center gap-6 pb-8 border-b border-gray-100 dark:border-gray-800 text-gray-700 dark:text-gray-300 overflow-x-auto">
+<div class="flex items-center gap-2 whitespace-nowrap">
+<span class="material-symbols-outlined">king_bed</span>
+<span>1 King Bed</span>
+</div>
+<div class="flex items-center gap-2 whitespace-nowrap">
+<span class="material-symbols-outlined">group</span>
+<span>Up to 3 guests</span>
+</div>
+<div class="flex items-center gap-2 whitespace-nowrap">
+<span class="material-symbols-outlined">square_foot</span>
+<span>800 sq ft</span>
+</div>
+<div class="flex items-center gap-2 whitespace-nowrap">
+<span class="material-symbols-outlined">waves</span>
+<span>Ocean View</span>
+</div>
+</div>
+<!-- Description -->
+<div class="flex flex-col gap-4">
+<h2 class="text-2xl font-bold text-gray-900 dark:text-white">About this space</h2>
+<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                            Experience unparalleled luxury in our Ocean View Deluxe Suite. Designed for the discerning traveler, this suite harmoniously blends modern aesthetics with coastal tranquility. Spanning 800 sq ft, it features a master bedroom with a plush king-sized bed, a separate spacious living area for entertaining or relaxing, and floor-to-ceiling windows that flood the space with natural light.
+                        </p>
+<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                            Step onto your private balcony to witness breathtaking sunrises over the Atlantic Ocean. The spa-inspired bathroom includes a deep soaking tub, a rain shower, and premium organic toiletries to rejuvenate your senses after a day in the city.
+                        </p>
+</div>
+<!-- Amenities -->
+<div>
+<h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">What this room offers</h2>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-y-6 gap-x-4">
+<div class="flex items-center gap-3 text-gray-700 dark:text-gray-300">
+<span class="material-symbols-outlined text-gray-400">wifi</span>
+<span>High-speed Wifi</span>
+</div>
+<div class="flex items-center gap-3 text-gray-700 dark:text-gray-300">
+<span class="material-symbols-outlined text-gray-400">tv</span>
+<span>55" Smart TV</span>
+</div>
+<div class="flex items-center gap-3 text-gray-700 dark:text-gray-300">
+<span class="material-symbols-outlined text-gray-400">ac_unit</span>
+<span>Climate control</span>
+</div>
+<div class="flex items-center gap-3 text-gray-700 dark:text-gray-300">
+<span class="material-symbols-outlined text-gray-400">workspace_premium</span>
+<span>Dedicated workspace</span>
+</div>
+<div class="flex items-center gap-3 text-gray-700 dark:text-gray-300">
+<span class="material-symbols-outlined text-gray-400">coffee_maker</span>
+<span>Espresso machine</span>
+</div>
+<div class="flex items-center gap-3 text-gray-700 dark:text-gray-300">
+<span class="material-symbols-outlined text-gray-400">iron</span>
+<span>Iron &amp; ironing board</span>
+</div>
+<div class="flex items-center gap-3 text-gray-700 dark:text-gray-300">
+<span class="material-symbols-outlined text-gray-400">lock</span>
+<span>In-room safe</span>
+</div>
+<div class="flex items-center gap-3 text-gray-700 dark:text-gray-300">
+<span class="material-symbols-outlined text-gray-400">dry_cleaning</span>
+<span>Bathrobes &amp; slippers</span>
+</div>
+</div>
+<button class="mt-8 border border-gray-900 dark:border-gray-200 text-gray-900 dark:text-gray-200 px-6 py-2.5 rounded-lg text-sm font-semibold hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+                            Show all 24 amenities
+                        </button>
+</div>
+<!-- Map / Location -->
+<div class="border-t border-gray-100 dark:border-gray-800 pt-10">
+<h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Where you'll be</h2>
+<p class="text-gray-600 dark:text-gray-400 mb-6">Located in the heart of South Beach, steps away from the ocean and nightlife.</p>
+<div class="w-full h-64 bg-gray-200 rounded-xl overflow-hidden relative" data-location="Miami, FL">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Map view of Miami Beach area" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD6AmwI2pNhhJLyRaPtfbIXjXRHTyKL-18mIq3_iK5eRXm8-6JfO2sco8PCHdRye5pb28I-ZjBl8DhT8Jb3wG6NuttLd2Fc3wnxuendf26RWQsunZWRG37ORgaLK5g_gYL0UjvRgym7o-h9gtqZM4k8l1DMfbDi3cm33Aa_TTikMa4KZiDiCbFsbYuWJOldajch5697Jx4Kx-0adZWFz_SzW_E_F_eECdY_P_QA2u778iWd-hkRnHnBQzHrzWxLPZIB6XSxeJ-Rh7Jk");'></div>
+<div class="absolute inset-0 bg-black/10 flex items-center justify-center">
+<button class="bg-white text-gray-900 px-4 py-2 rounded-lg font-bold shadow-lg hover:scale-105 transition-transform">
+                                     Explore the area
+                                 </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Sticky Booking Card -->
+<div class="lg:col-span-1">
+<div class="sticky top-24 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 shadow-xl p-6">
+<div class="flex items-end justify-between mb-6">
+<div>
+<span class="text-2xl font-bold text-gray-900 dark:text-white">$350</span>
+<span class="text-gray-500 dark:text-gray-400"> / night</span>
+</div>
+<div class="flex items-center text-sm">
+<span class="material-symbols-outlined text-primary text-[16px] mr-1">star</span>
+<span class="font-bold text-gray-900 dark:text-white">5.0</span>
+<span class="text-gray-400 ml-1"> (124)</span>
+</div>
+</div>
+<div class="grid grid-cols-2 border border-gray-300 dark:border-gray-600 rounded-xl mb-4 overflow-hidden">
+<div class="p-3 border-r border-b border-gray-300 dark:border-gray-600 sm:border-b-0 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors relative">
+<label class="block text-[10px] font-bold text-gray-500 uppercase tracking-wider">Check-in</label>
+<span class="text-sm font-medium text-gray-900 dark:text-white">Oct 14</span>
+</div>
+<div class="p-3 border-b border-gray-300 dark:border-gray-600 sm:border-b-0 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors relative">
+<label class="block text-[10px] font-bold text-gray-500 uppercase tracking-wider">Check-out</label>
+<span class="text-sm font-medium text-gray-900 dark:text-white">Oct 18</span>
+</div>
+<div class="col-span-2 p-3 border-t border-gray-300 dark:border-gray-600 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors relative">
+<label class="block text-[10px] font-bold text-gray-500 uppercase tracking-wider">Guests</label>
+<div class="flex justify-between items-center">
+<span class="text-sm font-medium text-gray-900 dark:text-white">2 guests</span>
+<span class="material-symbols-outlined text-gray-400">expand_more</span>
+</div>
+</div>
+</div>
+<button class="w-full bg-primary hover:bg-blue-600 text-white font-bold py-3.5 rounded-xl transition-all shadow-md hover:shadow-lg active:scale-95 mb-4">
+                            Reserve
+                        </button>
+<p class="text-center text-xs text-gray-500 mb-6">You won't be charged yet</p>
+<div class="flex flex-col gap-3 text-sm text-gray-600 dark:text-gray-300">
+<div class="flex justify-between">
+<span class="underline decoration-gray-300">$350 x 4 nights</span>
+<span>$1,400</span>
+</div>
+<div class="flex justify-between">
+<span class="underline decoration-gray-300">Cleaning fee</span>
+<span>$85</span>
+</div>
+<div class="flex justify-between">
+<span class="underline decoration-gray-300">Service fee</span>
+<span>$120</span>
+</div>
+</div>
+<div class="border-t border-gray-200 dark:border-gray-700 my-4"></div>
+<div class="flex justify-between font-bold text-lg text-gray-900 dark:text-white">
+<span>Total</span>
+<span>$1,605</span>
+</div>
+</div>
+<div class="mt-6 flex items-center justify-center gap-2 text-sm text-gray-500">
+<span class="material-symbols-outlined text-[18px]">flag</span>
+<a class="underline hover:text-gray-800 dark:hover:text-gray-200" href="#">Report this listing</a>
+</div>
+</div>
+</div>
+<!-- Similar Rooms -->
+<div class="mt-20">
+<div class="flex justify-between items-end mb-8">
+<h2 class="text-2xl font-bold text-gray-900 dark:text-white">Similar rooms you might like</h2>
+<a class="text-primary font-bold hover:underline hidden sm:block" href="#">View all rooms</a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Room Card 1 -->
+<div class="group flex flex-col gap-3 cursor-pointer">
+<div class="aspect-[4/3] rounded-xl overflow-hidden bg-gray-200 relative">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Bright modern hotel room with city view" style='background-image: url("../images/images/rooms/0vPFY-room(2).webp");'></div>
+<div class="absolute top-3 right-3 bg-white/90 backdrop-blur px-2 py-1 rounded-md text-xs font-bold shadow-sm">
+                                 Top Rated
+                             </div>
+</div>
+<div>
+<div class="flex justify-between items-start">
+<h3 class="font-bold text-lg text-gray-900 dark:text-white group-hover:text-primary transition-colors">Executive City King</h3>
+<span class="flex items-center text-sm font-medium text-gray-900 dark:text-white">
+<span class="material-symbols-outlined text-[16px] mr-1">star</span>4.9
+                                </span>
+</div>
+<p class="text-gray-500 text-sm mb-1">City View • 450 sq ft</p>
+<p class="mt-1"><span class="font-bold text-gray-900 dark:text-white">$280</span> <span class="text-gray-500">/ night</span></p>
+</div>
+</div>
+<!-- Room Card 2 -->
+<div class="group flex flex-col gap-3 cursor-pointer">
+<div class="aspect-[4/3] rounded-xl overflow-hidden bg-gray-200 relative">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Cozy double queen bedroom interior" style='background-image: url("../images/images/rooms/EARa0-7-ezgif.com-jpg-to-webp-converter.webp");'></div>
+</div>
+<div>
+<div class="flex justify-between items-start">
+<h3 class="font-bold text-lg text-gray-900 dark:text-white group-hover:text-primary transition-colors">Double Queen Studio</h3>
+<span class="flex items-center text-sm font-medium text-gray-900 dark:text-white">
+<span class="material-symbols-outlined text-[16px] mr-1">star</span>4.8
+                                </span>
+</div>
+<p class="text-gray-500 text-sm mb-1">Pool View • 500 sq ft</p>
+<p class="mt-1"><span class="font-bold text-gray-900 dark:text-white">$310</span> <span class="text-gray-500">/ night</span></p>
+</div>
+</div>
+<!-- Room Card 3 -->
+<div class="group flex flex-col gap-3 cursor-pointer">
+<div class="aspect-[4/3] rounded-xl overflow-hidden bg-gray-200 relative">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Luxury penthouse suite living area" style='background-image: url("../images/images/rooms/XhPHc-10-ezgif.com-jpg-to-webp-converter.webp");'></div>
+</div>
+<div>
+<div class="flex justify-between items-start">
+<h3 class="font-bold text-lg text-gray-900 dark:text-white group-hover:text-primary transition-colors">Penthouse Suite</h3>
+<span class="flex items-center text-sm font-medium text-gray-900 dark:text-white">
+<span class="material-symbols-outlined text-[16px] mr-1">star</span>5.0
+                                </span>
+</div>
+<p class="text-gray-500 text-sm mb-1">Ocean Front • 1200 sq ft</p>
+<p class="mt-1"><span class="font-bold text-gray-900 dark:text-white">$850</span> <span class="text-gray-500">/ night</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-white dark:bg-background-dark border-t border-gray-100 dark:border-gray-800 pt-16 pb-8">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+<div class="col-span-1 md:col-span-1">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary text-2xl">diamond</span>
+<span class="text-lg font-bold text-gray-900 dark:text-white">Aarya Hotel</span>
+</div>
+<p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+                        Experience the ultimate in luxury and comfort. Your perfect getaway starts here.
+                    </p>
+</div>
+<div>
+<h4 class="font-bold text-gray-900 dark:text-white mb-4">Support</h4>
+<ul class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+<li><a class="hover:text-primary" href="#">Help Center</a></li>
+<li><a class="hover:text-primary" href="#">Safety Information</a></li>
+<li><a class="hover:text-primary" href="#">Cancellation Options</a></li>
+<li><a class="hover:text-primary" href="#">COVID-19 Response</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-gray-900 dark:text-white mb-4">Company</h4>
+<ul class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+<li><a class="hover:text-primary" href="#">About Us</a></li>
+<li><a class="hover:text-primary" href="#">Careers</a></li>
+<li><a class="hover:text-primary" href="#">Press</a></li>
+<li><a class="hover:text-primary" href="#">Investor Relations</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-gray-900 dark:text-white mb-4">Subscribe</h4>
+<p class="text-sm text-gray-500 mb-4">Join our newsletter for exclusive offers.</p>
+<div class="flex gap-2">
+<input class="flex-1 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-primary" placeholder="Your email" type="email"/>
+<button class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-bold">Join</button>
+</div>
+</div>
+</div>
+<div class="border-t border-gray-100 dark:border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+<p>© 2023 Aarya Hotel. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="hover:text-gray-900 dark:hover:text-white" href="#">Privacy</a>
+<a class="hover:text-gray-900 dark:hover:text-white" href="#">Terms</a>
+<a class="hover:text-gray-900 dark:hover:text-white" href="#">Sitemap</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
